@@ -48,7 +48,7 @@ class Font extends AbstractStyle
 
         $css['font-family'] = $this->getValueIf($font !== null, "'{$font}'");
         $css['font-size'] = $this->getValueIf($size !== null, "{$size}pt");
-        $css['color'] = $this->getValueIf($color !== null, "#{$color}");
+        $css['color'] = $this->getValueIf($color !== null, $color == 'auto' ? $color : "#{$color}");
         $css['background'] = $this->getValueIf($fgColor != '', $fgColor);
         $css['font-weight'] = $this->getValueIf($style->isBold(), 'bold');
         $css['font-style'] = $this->getValueIf($style->isItalic(), 'italic');
